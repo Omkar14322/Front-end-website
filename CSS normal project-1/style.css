@@ -1,0 +1,50 @@
+ *{
+    margin: 0px;
+    padding: 0px;
+}
+.container{
+    height: 100vh;
+    width: 100vw;
+    background-image: url('images/background.jpg');
+     background-size:cover;/*scale the image,while preserving its intrinsic aspect ratio, to the smallest size such that both its width and height can completely cover the background positioning area.,*/
+    background-position:center;
+    position: relative;
+    overflow: hidden;
+    /* bottom: 56px; */
+}
+.runway{
+     height: 160px;
+     width: 100vw;
+     background-image: url('images/road.jpg');
+     position: absolute;
+     left: 0%;
+     bottom: 0%;
+}
+.airplane{
+    width: 300px;
+    position: absolute;
+    /* background-image: url('../images/airplane.png'); */
+    bottom: 150px;
+    right: -200px;
+    animation:  plan 4s linear infinite;
+               /* name , time , in linear direction.
+                    to run */         
+                    transform-origin: 80% 60%;
+                    /*                 (x) (y) */
+                    /* palne will bend 100% from front,and 50% from back. like this \. */
+    }
+    @keyframes plan{
+        0%{
+            transform: translate(0px) translateY(0px) rotate(0deg);
+        }
+        30%{
+            transform: translate(-500px) translateY(0px) rotate(0deg);
+        }
+        100%{
+            /* translate (x)--> plane will move horizintally.
+            ,translate(y)-->palne will takeup at -200px.
+            rotate(xdeg)--> plane will rotate uo to 20 deg. */
+           transform: translate(-1500px) translateY(-100px) rotate(20deg);
+        }
+        
+    }
